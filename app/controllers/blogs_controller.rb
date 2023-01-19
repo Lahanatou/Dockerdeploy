@@ -24,7 +24,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
 
       if @blog.save
-        redirect_to blog_url(@blog.id), notice: "Blog was successfully created." 
+        redirect_to blog_url(@blog.id), notice: "Blog was successfully created."
       else
        render :new
       end
@@ -42,7 +42,7 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1 or /blogs/1.json
   def destroy
     @blog.destroy
-      redirect_to blogs_url, notice: "Blog was successfully destroyed." 
+      redirect_to blogs_url, notice: "Blog was successfully destroyed."
   end
 
   private
@@ -53,6 +53,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:titre, :auteur)
+      params.require(:blog).permit(:title, :content)
     end
 end
